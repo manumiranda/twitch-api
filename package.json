@@ -1,0 +1,36 @@
+{
+  "name": "twitch-api",
+  "version": "0.0.0",
+  "description": "Simple module for using twitch.tv's REST API in node.js",
+  "keywords": [
+    "express",
+    "twitch.tv",
+    "auth",
+    "rest",
+    "api",
+    "authentication"
+  ],
+  "author": {
+    "name": "Manuel Miranda",
+    "email": "solidmax@gmail.com"
+  },
+  "homepage": "http://passportjs.org/",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jaredhanson/passport.git"
+  },
+  "bugs": {
+    "url": "http://github.com/jaredhanson/passport/issues"
+  },
+  "license": "MIT",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://www.opensource.org/licenses/MIT"
+    }
+  ],
+  "main": "./twitch-api",
+  "engines": {
+    "node": ">= 0.4.0"
+  }
+}
