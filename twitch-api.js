@@ -38,16 +38,6 @@ Twitch.prototype._createRequest = function(options, parameters){
   };
 };
 
-Twitch.prototype._launchRequest = function(req, callback){
-  request(req, function(err, response, body){
-    if (!err && body && !body.error){
-      callback(null, body);
-    } else {
-      callback(err || body);
-    }
-  });
-};
-
 Twitch.prototype._executeRequest = function(options, parameters, callback){
   // check for optional parameters
   if(!callback){
@@ -57,7 +47,13 @@ Twitch.prototype._executeRequest = function(options, parameters, callback){
 
   var req = this._createRequest(options, parameters);
 
-  this._launchRequest(req, callback);
+  request(req, function(err, response, body){
+    if (!err && body && !body.error){
+      callback(null, body);
+    } else {
+      callback(err || body);
+    }
+  });
 };
 
 Twitch.prototype.getAccessToken = function(code, callback){
@@ -86,11 +82,11 @@ Twitch.prototype.getAccessToken = function(code, callback){
 // ######  ####### #######  #####  #    #  #####
 
 Twitch.prototype.getBlocks =
-function (userName, accessToken, parameters, callback){
+function (user, accessToken, parameters, callback){
   this._executeRequest(
     {
       method: 'GET',
-      path: '/users/' + userName + '/blocks',
+      path: '/users/' + user + '/blocks',
       accessToken: accessToken,
     },
     parameters,
@@ -98,11 +94,11 @@ function (userName, accessToken, parameters, callback){
   );
 };
 
-Twitch.prototype.addBlock = function(userName, accessToken, target, callback){
+Twitch.prototype.addBlock = function(user, accessToken, target, callback){
   this._executeRequest(
     {
       method: 'PUT',
-      path: '/users/' + userName + '/blocks/' + target,
+      path: '/users/' + user + '/blocks/' + target,
       accessToken: accessToken,
     },
     callback
@@ -110,11 +106,11 @@ Twitch.prototype.addBlock = function(userName, accessToken, target, callback){
 };
 
 Twitch.prototype.removeBlock =
-function(userName, accessToken, target, callback){
+function(user, accessToken, target, callback){
   this._executeRequest(
     {
       method: 'DELETE',
-      path: '/users/' + userName + '/blocks/' + target,
+      path: '/users/' + user + '/blocks/' + target,
       accessToken: accessToken,
     },
     callback
@@ -140,7 +136,7 @@ Twitch.prototype.getChannel = function(channel, callback){
   );
 };
 
-Twitch.prototype.getUserChannel = function(accessToken, callback){
+Twitch.prototype.getAuthenticatedUserChannel = function(accessToken, callback){
   this._executeRequest(
     {
       method: 'GET',
@@ -163,6 +159,7 @@ Twitch.prototype.getChannelEditors = function(channel, accessToken, callback){
   );
 };
 
+
 Twitch.prototype.updateChannel =
 function (channel, accessToken, channelOptions, callback) {
   this._executeRequest(
@@ -175,7 +172,6 @@ function (channel, accessToken, channelOptions, callback) {
     callback
   );
 };
-
 
 Twitch.prototype.resetStreamKey =
   function (channel, accessToken, callback) {
@@ -220,7 +216,7 @@ Twitch.prototype.getChannelTeams = function(channel, callback){
 // #     # #     # #     #    #
 //  #####  #     # #     #    #
 
-Twitch.prototype.getChat = function(channel, callback){
+Twitch.prototype.getChannelChat = function(channel, callback){
   this._executeRequest(
     {
       method: 'GET',
@@ -291,7 +287,7 @@ Twitch.prototype.getUserFollowsChannel = function(user, channel, callback){
 };
 
 Twitch.prototype.userFollowChannel =
-function(user, accessToken, channel, parameters, callback){
+function(user, channel, accessToken, parameters, callback){
   this._executeRequest(
     {
       method: 'PUT',
@@ -304,7 +300,7 @@ function(user, accessToken, channel, parameters, callback){
 };
 
 Twitch.prototype.userUnfollowChannel =
-function(user, accessToken, channel, callback){
+function(user, channel, accessToken, callback){
   this._executeRequest(
     {
       method: 'DELETE',
