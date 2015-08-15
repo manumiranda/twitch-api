@@ -1,5 +1,4 @@
 'use strict';
-var oauth = require("oauth");
 var request = require("request");
 
 var baseUrl = 'https://api.twitch.tv/kraken';
@@ -13,13 +12,7 @@ var Twitch = function (options){
   this.clientId = options.clientId;
   this.clientSecret = options.clientSecret;
   this.redirectUri = options.redirectUri;
-  this.scope = options.scope;
-
-  this.oa = new oauth.OAuth2(
-    this.clientId, this.clientSecret, baseUrl, authorizePath, accessTokenPath
-  );
-
-  this.oa.setAccessTokenName('oauth_token');
+  this.scopes = options.scopes || [];
 
   return this;
 };
@@ -56,21 +49,40 @@ Twitch.prototype._executeRequest = function(options, parameters, callback){
   });
 };
 
-Twitch.prototype.getAccessToken = function(code, callback){
-  this.oa.getOAuthAccessToken(code,
-    {
-      grant_type: 'authorization_code',
-      scope: ['user_read'],
-      redirect_uri: this.redirectUri
-    },
-    function (err, accessToken, refreshToken, results){
-      if (!err){
-        callback(null, results);
-      } else {
-        callback(err);
-      }
+Twitch.prototype.getAuthorizationUrl = function(){
+  var scopesParam = '';
+  for (var i = 0; i < this.scopes.length;  i++){
+    scopesParam += this.scopes[i];
+    if (i != (this.scopes.length - 1)){
+      scopesParam += '+';
     }
+  }
+
+  return baseUrl + authorizePath +
+    '?response_type=code' +
+    '&client_id=' + this.clientId +
+    '&redirect_uri=' + this.redirectUri +
+    '&scope=' + scopesParam;
+};
+
+Twitch.prototype.getAccessToken = function(code, callback){
+  var parameters = {
+    client_id: this.clientId,
+    client_secret: this.clientSecret,
+    grant_type: 'authorization_code',
+    redirect_uri: this.redirectUri,
+    code: code
+  };
+
+  this._executeRequest(
+    {
+      method: 'POST',
+      path: accessTokenPath,
+    },
+    parameters,
+    callback
   );
+
 };
 
 // ######  #       #######  #####  #    #  #####

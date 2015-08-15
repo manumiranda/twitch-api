@@ -1,10 +1,14 @@
 # twitch-api
-Module for easily using all [twitch.tv](http://twitch.tv) API endponits in nodejs
+Module for easily using all [twitch.tv](http://twitch.tv) API v3 endponits in nodejs
 
 ## Installation
 `npm install twitch-api`
 
 ## Usage
+
+Follow the [Authorization Code Flow](https://github.com/justintv/Twitch-API/blob/master/authentication.md#authorization-code-flow) that you can find in the [official twitch.tv API v3 documentation](https://github.com/justintv/Twitch-API):
+1. Send the user you'd like to authenticate to twitch.tv's authentication URL (you can get this URL using the convenience method `getAuthorizationUrl` **once the library is initiallized**)
+2. If the user authorizes your application, she will be redirected to `https://[your registered redirect URI]/?code=[CODE]`. That is the `code` you need to get the user's *access token*.
 
 ### Step 1: Initialization
 ```javascript
@@ -12,19 +16,14 @@ var TwitchApi = require('twitch-api');
 var twitch = new TwitchAPI({
     clientId: 'your client id',
     clientSecret: 'your client secret',
-    redirectUri: 'same redirectUri that you have configured on your app'
+    redirectUri: 'same redirectUri that you have configured on your app',
+    scopes: [array of scopes you want access to]
   });
 ```
 
-### Step 2: Getting the request code
+### Step 2: Get the user's access token
 ```javascript
-TODO
-```
-
-### Step 3: Initialization
-```javascript
-//TODO: explain code
-twitch.getAccessToken(requestCode, function(err, body){
+twitch.getAccessToken(code, function(err, body){
     if (err){
       console.log(err);
     } else {
@@ -37,6 +36,6 @@ twitch.getAccessToken(requestCode, function(err, body){
     }
 });
 ```
-Once you have your user's access token, you can use it to query any **authentifcated** resource the user has (and has granted you) access to.
+Once you have your user's *access token*, you can use it to query any **authentifcated** resource the user has (and has granted you) access to.
 
 ## Methods
