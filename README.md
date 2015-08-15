@@ -7,8 +7,8 @@ Module for easily using all [twitch.tv](http://twitch.tv) API v3 endponits in no
 ## Usage
 
 Follow the [Authorization Code Flow](https://github.com/justintv/Twitch-API/blob/master/authentication.md#authorization-code-flow) that you can find in the [official twitch.tv API v3 documentation](https://github.com/justintv/Twitch-API):
-1. Send the user you'd like to authenticate to twitch.tv's authentication URL (you can get this URL using the convenience method `getAuthorizationUrl` **once the library is initiallized**)
-2. If the user authorizes your application, she will be redirected to `https://[your registered redirect URI]/?code=[CODE]`. That is the `code` you need to get the user's *access token*.
+1. Send the user you'd like to authenticate to twitch.tv's authentication URL (you can get this URL using the convenience method `getAuthorizationUrl` **once the module is initiallized**)
+2. If the user authorizes your application, she will be redirected to `https://[your registered redirect URI]/?code=[CODE]`. There you can get the `code` you need to get the user's *access token*.
 
 ### Step 1: Initialization
 ```javascript
@@ -36,6 +36,6 @@ twitch.getAccessToken(code, function(err, body){
     }
 });
 ```
-Once you have your user's *access token*, you can use it to query any **authentifcated** resource the user has (and has granted you) access to.
+Once you have your user's *access token*, you can use it to query any **authenticated** resource the user has (and has granted you) access to.
 
 ## Methods
