@@ -46,7 +46,8 @@ Twitch.prototype._createRequest = function(options, parameters){
     qs: parameters,
     headers: {
       'Authorization': options.accessToken?'OAuth ' + options.accessToken : undefined,
-      'Accept': 'Accept: application/vnd.twitchtv.v3+json'
+      'Accept': 'Accept: application/vnd.twitchtv.v3+json',
+      'Client-ID': this.clientId
     },
     body: options.body,
     json: true
