@@ -754,6 +754,7 @@ getAuthenticatedUserFollowedStreams(accessToken, [parameters], callback);
 | parameters | Object | True | The parameters of the request |
 | parameters.limit | Number | True | Maximum number of streams. Maximum is 100, defaults to 25 |
 | parameters.offset | Number | True | Follow object offset for pagination. Defaults to 0 |
+| parameters.stream_type | String | True | Only shows streams from a certain type. Permitted values: all, playlist, live |
 | callback | requestCallback | False | The callback that will manage the response |
 
 ### getAuthenticatedUserFollowedVideos (Function)
