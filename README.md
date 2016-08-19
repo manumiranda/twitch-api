@@ -46,7 +46,7 @@ The callback that will handle the response.
 
 #### Params
 
-| Name | Type | Optional | Desciption |
+| Name | Type | Optional | Description |
 | ---- | ---- | -------- | ---------- |
 | err | Object | False | In request produces an error, it will be stored in this parameter. null if the request was successful |
 | body | Object | False | The body of the response if the request was successful |
@@ -61,7 +61,7 @@ var getauthorizationurl = getAuthorizationUrl();
 
 #### Returns
 
-| Name | Type | Desciption |
+| Name | Type | Description |
 | ---- | ---- | ---------- |
 | return | String | The the full URL to witch you must send your user for authorization |
 
@@ -75,7 +75,7 @@ getAccessToken(code, callback);
 
 #### Params
 
-| Name | Type | Optional | Desciption |
+| Name | Type | Optional | Description |
 | ---- | ---- | -------- | ---------- |
 | code | String | False | The code that twitch.tv's API sent in the redirection URI parameters when the user authorized your application |
 | callback | requestCallback | False | The callback that will manage the response. |
@@ -92,7 +92,7 @@ getBlocks(user, accessToken, [parameters], callback);
 
 #### Params
 
-| Name | Type | Optional | Desciption |
+| Name | Type | Optional | Description |
 | ---- | ---- | -------- | ---------- |
 | user | String | False | The user name of wich you want to get the block list, authenticated by accesToken |
 | accessToken | String | False | The token representing the authenticated user |
@@ -111,7 +111,7 @@ addBlock(user, accessToken, target, callback);
 
 #### Params
 
-| Name | Type | Optional | Desciption |
+| Name | Type | Optional | Description |
 | ---- | ---- | -------- | ---------- |
 | user | String | False | The user name of the user |
 | accessToken | String | False | The token representing the authenticated user |
@@ -130,7 +130,7 @@ removeBlock(user, accessToken, target, callback);
 
 #### Params
 
-| Name | Type | Optional | Desciption |
+| Name | Type | Optional | Description |
 | ---- | ---- | -------- | ---------- |
 | user | String | False | The user name of the user |
 | accessToken | String | False | The token representing the authenticated user |
@@ -149,7 +149,7 @@ getChannel(channel, callback);
 
 #### Params
 
-| Name | Type | Optional | Desciption |
+| Name | Type | Optional | Description |
 | ---- | ---- | -------- | ---------- |
 | channel | String | False | The channel name |
 | callback | requestCallback | False | The callback that will manage the response. |
@@ -166,7 +166,7 @@ getAuthenticatedUserChannel(accessToken, callback);
 
 #### Params
 
-| Name | Type | Optional | Desciption |
+| Name | Type | Optional | Description |
 | ---- | ---- | -------- | ---------- |
 | accessToken | String | False | The token representing the authenticated user |
 | callback | requestCallback | False | The callback that will manage the response. |
@@ -183,7 +183,7 @@ getChannelEditors(channel, accessToken, callback);
 
 #### Params
 
-| Name | Type | Optional | Desciption |
+| Name | Type | Optional | Description |
 | ---- | ---- | -------- | ---------- |
 | channel | String | False | The channel name |
 | accessToken | String | False | The token representing the authenticated user |
@@ -201,7 +201,7 @@ updateChannel(channel, accessToken, channelOptions, callback);
 
 #### Params
 
-| Name | Type | Optional | Desciption |
+| Name | Type | Optional | Description |
 | ---- | ---- | -------- | ---------- |
 | channel | String | False | The channel name |
 | accessToken | String | False | The token representing the authenticated user |
@@ -224,7 +224,7 @@ resetStreamKey(channel, accessToken, callback);
 
 #### Params
 
-| Name | Type | Optional | Desciption |
+| Name | Type | Optional | Description |
 | ---- | ---- | -------- | ---------- |
 | channel | String | False | The channel name |
 | accessToken | String | False | The token representing the authenticated user |
@@ -242,7 +242,7 @@ startCommercial(channel, accessToken, [parameters], callback);
 
 #### Params
 
-| Name | Type | Optional | Desciption |
+| Name | Type | Optional | Description |
 | ---- | ---- | -------- | ---------- |
 | channel | String | False | The channel name |
 | accessToken | String | False | The token representing the authenticated user |
@@ -262,7 +262,7 @@ getChannelTeams(channel, callback);
 
 #### Params
 
-| Name | Type | Optional | Desciption |
+| Name | Type | Optional | Description |
 | ---- | ---- | -------- | ---------- |
 | channel | String | False | The channel name |
 | callback | requestCallback | False | The callback that will manage the response |
@@ -279,7 +279,7 @@ getChannelChat(channel, callback);
 
 #### Params
 
-| Name | Type | Optional | Desciption |
+| Name | Type | Optional | Description |
 | ---- | ---- | -------- | ---------- |
 | channel | String | False | The channel name |
 | callback | requestCallback | False | The callback that will manage the response |
@@ -296,7 +296,7 @@ getEmoticons(callback);
 
 #### Params
 
-| Name | Type | Optional | Desciption |
+| Name | Type | Optional | Description |
 | ---- | ---- | -------- | ---------- |
 | callback | requestCallback | False | The callback that will manage the response |
 
@@ -312,7 +312,7 @@ getChannelBadges(channel, callback);
 
 #### Params
 
-| Name | Type | Optional | Desciption |
+| Name | Type | Optional | Description |
 | ---- | ---- | -------- | ---------- |
 | channel | String | False | The channel name |
 | callback | requestCallback | False | The callback that will manage the response |
@@ -329,7 +329,7 @@ getChannelFollows(channel, [parameters], callback);
 
 #### Params
 
-| Name | Type | Optional | Desciption |
+| Name | Type | Optional | Description |
 | ---- | ---- | -------- | ---------- |
 | channel | String | False | The channel name |
 | parameters | Object | True | The parameters of the request |
@@ -350,7 +350,7 @@ getUserFollowedChannels(user, [parameters], callback);
 
 #### Params
 
-| Name | Type | Optional | Desciption |
+| Name | Type | Optional | Description |
 | ---- | ---- | -------- | ---------- |
 | user | String | False | The user name |
 | parameters | Object | True | The parameters of the request |
@@ -372,7 +372,7 @@ getUserFollowsChannel(user, channel, callback);
 
 #### Params
 
-| Name | Type | Optional | Desciption |
+| Name | Type | Optional | Description |
 | ---- | ---- | -------- | ---------- |
 | user | String | False | The user name |
 | channel | String | False | The channel name |
@@ -390,7 +390,7 @@ userFollowChannel(user, channel, accessToken, [parameters], callback);
 
 #### Params
 
-| Name | Type | Optional | Desciption |
+| Name | Type | Optional | Description |
 | ---- | ---- | -------- | ---------- |
 | user | String | False | The user name |
 | channel | String | False | The channel name |
@@ -411,7 +411,7 @@ userUnfollowChannel(user, channel, accessToken, callback);
 
 #### Params
 
-| Name | Type | Optional | Desciption |
+| Name | Type | Optional | Description |
 | ---- | ---- | -------- | ---------- |
 | user | String | False | The user name |
 | channel | String | False | The channel name |
@@ -430,7 +430,7 @@ getTopGames([parameters], callback);
 
 #### Params
 
-| Name | Type | Optional | Desciption |
+| Name | Type | Optional | Description |
 | ---- | ---- | -------- | ---------- |
 | parameters | Object | True | The parameters of the request |
 | parameters.limit | Number | True | Maximum number of games. Maximum is 100, defaults to 25 |
@@ -449,7 +449,7 @@ getIngests(callback);
 
 #### Params
 
-| Name | Type | Optional | Desciption |
+| Name | Type | Optional | Description |
 | ---- | ---- | -------- | ---------- |
 | callback | requestCallback | False | The callback that will manage the response |
 
@@ -465,7 +465,7 @@ getRoot([accessToken], callback);
 
 #### Params
 
-| Name | Type | Optional | Desciption |
+| Name | Type | Optional | Description |
 | ---- | ---- | -------- | ---------- |
 | accessToken | String | True | The token representing the authenticated user |
 | callback | requestCallback | False | The callback that will manage the response |
@@ -482,7 +482,7 @@ searchChannels(parameters, callback);
 
 #### Params
 
-| Name | Type | Optional | Desciption |
+| Name | Type | Optional | Description |
 | ---- | ---- | -------- | ---------- |
 | parameters | Object | False | The parameters of the request |
 | parameters.query | String | False | Search query. The field can also be parameters.q |
@@ -502,7 +502,7 @@ searchStreams(parameters, callback);
 
 #### Params
 
-| Name | Type | Optional | Desciption |
+| Name | Type | Optional | Description |
 | ---- | ---- | -------- | ---------- |
 | parameters | Object | False | The parameters of the request |
 | parameters.query | String | False | Search query. The field can also be parameters.q |
@@ -523,7 +523,7 @@ searchGames(parameters, callback);
 
 #### Params
 
-| Name | Type | Optional | Desciption |
+| Name | Type | Optional | Description |
 | ---- | ---- | -------- | ---------- |
 | parameters | Object | False | The parameters of the request |
 | parameters.query | String | False | Search query. The field can also be parameters.q |
@@ -543,7 +543,7 @@ getChannelStream(channel, callback);
 
 #### Params
 
-| Name | Type | Optional | Desciption |
+| Name | Type | Optional | Description |
 | ---- | ---- | -------- | ---------- |
 | channel | String | False | The channel name |
 | callback | requestCallback | False | The callback that will manage the response |
@@ -560,7 +560,7 @@ getStreams([parameters], callback);
 
 #### Params
 
-| Name | Type | Optional | Desciption |
+| Name | Type | Optional | Description |
 | ---- | ---- | -------- | ---------- |
 | parameters | Object | True | The parameters of the request |
 | parameters.game | String | True | Streams categorized under game. |
@@ -582,7 +582,7 @@ getFeaturedStreams([parameters], callback);
 
 #### Params
 
-| Name | Type | Optional | Desciption |
+| Name | Type | Optional | Description |
 | ---- | ---- | -------- | ---------- |
 | parameters | Object | True | The parameters of the request |
 | parameters.limit | Number | True | Maximum number of streams. Maximum is 100, defaults to 25 |
@@ -601,7 +601,7 @@ getStreamsSummary([parameters], callback);
 
 #### Params
 
-| Name | Type | Optional | Desciption |
+| Name | Type | Optional | Description |
 | ---- | ---- | -------- | ---------- |
 | parameters | Object | True | The parameters of the request |
 | parameters.game | String | True | Streams categorized under game. |
@@ -619,7 +619,7 @@ getChannelSubscriptions(channel, accessToken, [parameters]);
 
 #### Params
 
-| Name | Type | Optional | Desciption |
+| Name | Type | Optional | Description |
 | ---- | ---- | -------- | ---------- |
 | channel | String | False | The channel name |
 | accessToken | String | False | The token representing the authenticated user |
@@ -640,7 +640,7 @@ getUserSubscriptionToChannel(user, channel, accessToken, callback);
 
 #### Params
 
-| Name | Type | Optional | Desciption |
+| Name | Type | Optional | Description |
 | ---- | ---- | -------- | ---------- |
 | user | String | False | The user name |
 | channel | String | False | The channel name |
@@ -659,7 +659,7 @@ getChannelSubscriptionOfUser(user, channel, accessToken, callback);
 
 #### Params
 
-| Name | Type | Optional | Desciption |
+| Name | Type | Optional | Description |
 | ---- | ---- | -------- | ---------- |
 | user | String | False | The user name |
 | channel | String | False | The channel name |
@@ -678,7 +678,7 @@ getTeams([parameters], callback);
 
 #### Params
 
-| Name | Type | Optional | Desciption |
+| Name | Type | Optional | Description |
 | ---- | ---- | -------- | ---------- |
 | parameters | Object | True | The parameters of the request |
 | parameters.limit | Number | True | Maximum number of teams. Maximum is 100, defaults to 25 |
@@ -697,7 +697,7 @@ getTeam(team, callback);
 
 #### Params
 
-| Name | Type | Optional | Desciption |
+| Name | Type | Optional | Description |
 | ---- | ---- | -------- | ---------- |
 | team | String | False | The team name |
 | callback | requestCallback | False | The callback that will manage the response |
@@ -714,7 +714,7 @@ getUser(user, callback);
 
 #### Params
 
-| Name | Type | Optional | Desciption |
+| Name | Type | Optional | Description |
 | ---- | ---- | -------- | ---------- |
 | user | String | False | The user name of the user |
 | callback | requestCallback | False | The callback that will manage the response. |
@@ -731,7 +731,7 @@ getAuthenticatedUser(accessToken, callback);
 
 #### Params
 
-| Name | Type | Optional | Desciption |
+| Name | Type | Optional | Description |
 | ---- | ---- | -------- | ---------- |
 | accessToken | String | False | The token representing the authenticated user |
 | callback | requestCallback | False | The callback that will manage the response |
@@ -748,7 +748,7 @@ getAuthenticatedUserFollowedStreams(accessToken, [parameters], callback);
 
 #### Params
 
-| Name | Type | Optional | Desciption |
+| Name | Type | Optional | Description |
 | ---- | ---- | -------- | ---------- |
 | accessToken | String | False | The token representing the authenticated user |
 | parameters | Object | True | The parameters of the request |
@@ -769,7 +769,7 @@ getAuthenticatedUserFollowedVideos(accessToken, [parameters], callback);
 
 #### Params
 
-| Name | Type | Optional | Desciption |
+| Name | Type | Optional | Description |
 | ---- | ---- | -------- | ---------- |
 | accessToken | String | False | The token representing the authenticated user |
 | parameters | Object | True | The parameters of the request |
@@ -789,7 +789,7 @@ getVideo(videoId, callback);
 
 #### Params
 
-| Name | Type | Optional | Desciption |
+| Name | Type | Optional | Description |
 | ---- | ---- | -------- | ---------- |
 | videoId | String | False | The id of the video |
 | callback | requestCallback | False | The callback that will manage the response. |
@@ -806,7 +806,7 @@ getTopVideos([parameters], callback);
 
 #### Params
 
-| Name | Type | Optional | Desciption |
+| Name | Type | Optional | Description |
 | ---- | ---- | -------- | ---------- |
 | parameters | Object | True | The parameters of the request |
 | parameters.limit | Number | True | Maximum number of videos. Maximum is 100, defaults to 25 |
@@ -827,7 +827,7 @@ getChannelVideos([parameters], callback);
 
 #### Params
 
-| Name | Type | Optional | Desciption |
+| Name | Type | Optional | Description |
 | ---- | ---- | -------- | ---------- |
 | parameters | Object | True | The parameters of the request |
 | parameters.limit | Number | True | Maximum number of videos. Maximum is 100, defaults to 25 |
