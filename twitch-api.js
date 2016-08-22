@@ -1025,6 +1025,8 @@ Twitch.prototype.getAuthenticatedUser = function (accessToken, callback) {
  *           Maximum is 100, defaults to 25
  *    @param [parameters.offset] {Number} Follow object offset for pagination.
  *           Defaults to 0
+ *    @param [parameters.stream_type] {String} Only shows streams from a certain
+ *           type. Permitted values: all, playlist, live
  * @param callback {requestCallback} The callback that will manage the response
  */
 Twitch.prototype.getAuthenticatedUserFollowedStreams =
