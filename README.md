@@ -10,6 +10,27 @@ Follow the [Authorization Code Flow](https://github.com/justintv/Twitch-API/blob
 1. Send the user you'd like to authenticate to twitch.tv's authentication URL (you can get this URL using the convenience method `getAuthorizationUrl` **once the module is initiallized**)
 2. If the user authorizes your application, she will be redirected to `https://[your registered redirect URI]/?code=[CODE]`. There you can get the `code` you need to get the user's *access token*.
 
+<div style="margin: 25px;">
+<a href="https://rapidapi.com/package/TwitchTV/functions?utm_source=TwitchGitHub-node.js&utm_medium=button&utm_content=Vendor_GitHub" style="
+    all: initial;
+    background-color: #498FE1;
+    border-width: 0;
+    border-radius: 5px;
+    padding: 10px 20px;
+    color: white;
+    font-family: 'Helvetica';
+    font-size: 12pt;
+    background-image: url(https://scdn.rapidapi.com/logo-small.png);
+    background-size: 25px;
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 10px;
+    padding-left: 44px;
+    cursor: pointer;">
+  Run now on <b>RapidAPI</b>
+</a>
+</div>
+
 ### Step 1: Initialization
 ```javascript
 var TwitchApi = require('twitch-api');
