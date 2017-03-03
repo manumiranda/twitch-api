@@ -1128,6 +1128,7 @@ Twitch.prototype.getTopVideos = function (parameters, callback) {
  *
  * GET /channels/:channel/videos
  *
+ * @param channel {String} The channel name
  * @param [parameters] {Object} The parameters of the request
  *    @param [parameters.limit] {Number} Maximum number of videos.
  *           Maximum is 100, defaults to 25

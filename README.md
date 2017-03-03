@@ -822,13 +822,14 @@ Returns a list of videos ordered by time of creation, starting with the most rec
 API endpoint: [GET /channels/:channel/videos](https://github.com/justintv/Twitch-API/blob/master/v3_resources/videos.md#get-channelschannelvideos)
 
 ```js
-getChannelVideos([parameters], callback);
+getChannelVideos(channel, [parameters], callback);
 ```
 
 #### Params
 
 | Name | Type | Optional | Description |
 | ---- | ---- | -------- | ---------- |
+| channel | String | False | The channel name |
 | parameters | Object | True | The parameters of the request |
 | parameters.limit | Number | True | Maximum number of videos. Maximum is 100, defaults to 25 |
 | parameters.offset | Number | True | Follow object offset for pagination. Defaults to 0 |
