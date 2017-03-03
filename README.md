@@ -13,7 +13,7 @@ Follow the [Authorization Code Flow](https://github.com/justintv/Twitch-API/blob
 ### Step 1: Initialization
 ```javascript
 var TwitchApi = require('twitch-api');
-var twitch = new TwitchAPI({
+var twitch = new TwitchApi({
     clientId: 'your client id',
     clientSecret: 'your client secret',
     redirectUri: 'same redirectUri that you have configured on your app',
