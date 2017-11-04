@@ -137,6 +137,33 @@ Twitch.prototype.getAccessToken = function(code, callback){
 
 };
 
+/**
+ * Requests Twitch.tv for an accessCode for using your refresh token
+ *
+ * @param refresh_token {String} The code that twitch.tv's API sent in the
+ *        getAccessToken response
+ * @param callback {requestCallback} The callback that will manage the response.
+ */
+Twitch.prototype.refreshAccessToken = function(refresh_token, callback){
+  var parameters = {
+    client_id: this.clientId,
+    client_secret: this.clientSecret,
+    refresh_token : refresh_token,
+    grant_type: 'refresh_token',
+    redirect_uri: this.redirectUri
+  };
+
+  this._executeRequest(
+    {
+      method: 'POST',
+      path: accessTokenPath,
+    },
+    parameters,
+    callback
+  );
+
+};
+
 // ######  #       #######  #####  #    #  #####
 // #     # #       #     # #     # #   #  #     #
 // #     # #       #     # #       #  #   #
