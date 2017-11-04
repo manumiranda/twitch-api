@@ -18,7 +18,7 @@ var Twitch = function (options){
 };
 
 /**
- * The callback that will handle the response.
+ * The callback that will handle the response
  * @callback requestCallback
  * @param err {Object} In request produces an error, it will be stored in
  *        this parameter. null if the request was successful
@@ -67,7 +67,7 @@ Twitch.prototype._createRequest = function(options, parameters){
  *      authenticated user
  * @param [options.body] {JSON} The JSON data to send with the request
  * @param [parameters] {Object} The URL parameters of the request in JSON format
- * @param callback {requestCallback} The callback that will manage the response.
+ * @param callback {requestCallback} The callback that will manage the response
  */
 Twitch.prototype._executeRequest = function(options, parameters, callback){
   // check for optional parameters
@@ -115,7 +115,7 @@ Twitch.prototype.getAuthorizationUrl = function(){
  *
  * @param code {String} The code that twitch.tv's API sent in the
  *        redirection URI parameters when the user authorized your application
- * @param callback {requestCallback} The callback that will manage the response.
+ * @param callback {requestCallback} The callback that will manage the response
  */
 Twitch.prototype.getAccessToken = function(code, callback){
   var parameters = {
@@ -140,15 +140,15 @@ Twitch.prototype.getAccessToken = function(code, callback){
 /**
  * Requests Twitch.tv for an accessCode for using your refresh token
  *
- * @param refresh_token {String} The code that twitch.tv's API sent in the
+ * @param refreshToken {String} The code that twitch.tv's API sent in the
  *        getAccessToken response
- * @param callback {requestCallback} The callback that will manage the response.
+ * @param callback {requestCallback} The callback that will manage the response
  */
-Twitch.prototype.refreshAccessToken = function(refresh_token, callback){
+Twitch.prototype.refreshAccessToken = function(refreshToken, callback){
   var parameters = {
     client_id: this.clientId,
     client_secret: this.clientSecret,
-    refresh_token : refresh_token,
+    refresh_token : refreshToken,
     grant_type: 'refresh_token',
     redirect_uri: this.redirectUri
   };
@@ -181,7 +181,7 @@ Twitch.prototype.refreshAccessToken = function(refresh_token, callback){
  *        authenticated by accesToken
  * @param accessToken {String} The token representing the authenticated user
  * @param [parameters] {Object} The parameters of the API endpoint
- * @param callback {requestCallback} The callback that will manage the response.
+ * @param callback {requestCallback} The callback that will manage the response
  */
 Twitch.prototype.getBlocks =
 function (user, accessToken, parameters, callback){
@@ -204,7 +204,7 @@ function (user, accessToken, parameters, callback){
  * @param user {String} The user name of the user
  * @param accessToken {String} The token representing the authenticated user
  * @param target {String} the user name your user wants to block
- * @param callback {requestCallback} The callback that will manage the response.
+ * @param callback {requestCallback} The callback that will manage the response
  */
 Twitch.prototype.addBlock = function(user, accessToken, target, callback){
   this._executeRequest(
@@ -225,7 +225,7 @@ Twitch.prototype.addBlock = function(user, accessToken, target, callback){
  * @param user {String} The user name of the user
  * @param accessToken {String} The token representing the authenticated user
  * @param target {String} the user name your user wants to unblock
- * @param callback {requestCallback} The callback that will manage the response.
+ * @param callback {requestCallback} The callback that will manage the response
  */
 Twitch.prototype.removeBlock =
 function(user, accessToken, target, callback){
@@ -254,7 +254,7 @@ function(user, accessToken, target, callback){
  * GET /channels/:channel/
  *
  * @param channel {String} The channel name
- * @param callback {requestCallback} The callback that will manage the response.
+ * @param callback {requestCallback} The callback that will manage the response
  */
 Twitch.prototype.getChannel = function(channel, callback){
   this._executeRequest(
@@ -273,7 +273,7 @@ Twitch.prototype.getChannel = function(channel, callback){
  * GET /channel
  *
  * @param accessToken {String} The token representing the authenticated user
- * @param callback {requestCallback} The callback that will manage the response.
+ * @param callback {requestCallback} The callback that will manage the response
  */
 Twitch.prototype.getAuthenticatedUserChannel = function(accessToken, callback){
   this._executeRequest(
@@ -294,7 +294,7 @@ Twitch.prototype.getAuthenticatedUserChannel = function(accessToken, callback){
  *
  * @param channel {String} The channel name
  * @param accessToken {String} The token representing the authenticated user
- * @param callback {requestCallback} The callback that will manage the response.
+ * @param callback {requestCallback} The callback that will manage the response
  */
 Twitch.prototype.getChannelEditors = function(channel, accessToken, callback){
   this._executeRequest(
@@ -341,7 +341,7 @@ function (channel, accessToken, channelOptions, callback) {
  *
  * @param channel {String} The channel name
  * @param accessToken {String} The token representing the authenticated user
- * @param callback {requestCallback} The callback that will manage the response.
+ * @param callback {requestCallback} The callback that will manage the response
  */
 Twitch.prototype.resetStreamKey =
   function (channel, accessToken, callback) {
@@ -1010,7 +1010,7 @@ Twitch.prototype.getTeam = function (team, callback) {
  * GET /users/:user
  *
  * @param user {String} The user name of the user
- * @param callback {requestCallback} The callback that will manage the response.
+ * @param callback {requestCallback} The callback that will manage the response
  */
 Twitch.prototype.getUser = function (user, callback) {
   this._executeRequest(
@@ -1110,7 +1110,7 @@ function (accessToken, parameters, callback) {
  * GET /videos/:id
  *
  * @param videoId {String} The id of the video
- * @param callback {requestCallback} The callback that will manage the response.
+ * @param callback {requestCallback} The callback that will manage the response
  */
 Twitch.prototype.getVideo = function (videoId, callback) {
   this._executeRequest(

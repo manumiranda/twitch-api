@@ -42,7 +42,7 @@ Once you have your user's *access token*, you can use it to query any **authenti
 
 ### requestCallback (Callback)
 
-The callback that will handle the response.
+The callback that will handle the response
 
 #### Params
 
@@ -53,7 +53,7 @@ The callback that will handle the response.
 
 ### getAuthorizationUrl (Function)
 
-Returns the full URL to witch you must send your user in order to authorize your application
+Returns the full URL to which you must send your user in order to authorize your application
 
 ```js
 var getauthorizationurl = getAuthorizationUrl();
@@ -63,7 +63,7 @@ var getauthorizationurl = getAuthorizationUrl();
 
 | Name | Type | Description |
 | ---- | ---- | ---------- |
-| return | String | The the full URL to witch you must send your user for authorization |
+| return | String | The the full URL to which you must send your user for authorization |
 
 ### getAccessToken (Function)
 
@@ -78,7 +78,22 @@ getAccessToken(code, callback);
 | Name | Type | Optional | Description |
 | ---- | ---- | -------- | ---------- |
 | code | String | False | The code that twitch.tv's API sent in the redirection URI parameters when the user authorized your application |
-| callback | requestCallback | False | The callback that will manage the response. |
+| callback | requestCallback | False | The callback that will manage the response |
+
+### refreshAccessToken (Function)
+
+Requests Twitch.tv for an accessCode for using your refresh token
+
+```js
+refreshAccessToken(refreshToken, callback);
+```
+
+#### Params
+
+| Name | Type | Optional | Description |
+| ---- | ---- | -------- | ---------- |
+| refreshToken | String | False | The code that twitch.tv's API sent in the getAccessToken response |
+| callback | requestCallback | False | The callback that will manage the response |
 
 ### getBlocks (Function)
 
@@ -97,7 +112,7 @@ getBlocks(user, accessToken, [parameters], callback);
 | user | String | False | The user name of wich you want to get the block list, authenticated by accesToken |
 | accessToken | String | False | The token representing the authenticated user |
 | parameters | Object | True | The parameters of the API endpoint |
-| callback | requestCallback | False | The callback that will manage the response. |
+| callback | requestCallback | False | The callback that will manage the response |
 
 ### addBlock (Function)
 
@@ -116,7 +131,7 @@ addBlock(user, accessToken, target, callback);
 | user | String | False | The user name of the user |
 | accessToken | String | False | The token representing the authenticated user |
 | target | String | False | the user name your user wants to block |
-| callback | requestCallback | False | The callback that will manage the response. |
+| callback | requestCallback | False | The callback that will manage the response |
 
 ### removeBlock (Function)
 
@@ -135,7 +150,7 @@ removeBlock(user, accessToken, target, callback);
 | user | String | False | The user name of the user |
 | accessToken | String | False | The token representing the authenticated user |
 | target | String | False | the user name your user wants to unblock |
-| callback | requestCallback | False | The callback that will manage the response. |
+| callback | requestCallback | False | The callback that will manage the response |
 
 ### getChannel (Function)
 
@@ -152,7 +167,7 @@ getChannel(channel, callback);
 | Name | Type | Optional | Description |
 | ---- | ---- | -------- | ---------- |
 | channel | String | False | The channel name |
-| callback | requestCallback | False | The callback that will manage the response. |
+| callback | requestCallback | False | The callback that will manage the response |
 
 ### getAuthenticatedUserChannel (Function)
 
@@ -169,7 +184,7 @@ getAuthenticatedUserChannel(accessToken, callback);
 | Name | Type | Optional | Description |
 | ---- | ---- | -------- | ---------- |
 | accessToken | String | False | The token representing the authenticated user |
-| callback | requestCallback | False | The callback that will manage the response. |
+| callback | requestCallback | False | The callback that will manage the response |
 
 ### getChannelEditors (Function)
 
@@ -187,7 +202,7 @@ getChannelEditors(channel, accessToken, callback);
 | ---- | ---- | -------- | ---------- |
 | channel | String | False | The channel name |
 | accessToken | String | False | The token representing the authenticated user |
-| callback | requestCallback | False | The callback that will manage the response. |
+| callback | requestCallback | False | The callback that will manage the response |
 
 ### updateChannel (Function)
 
@@ -228,7 +243,7 @@ resetStreamKey(channel, accessToken, callback);
 | ---- | ---- | -------- | ---------- |
 | channel | String | False | The channel name |
 | accessToken | String | False | The token representing the authenticated user |
-| callback | requestCallback | False | The callback that will manage the response. |
+| callback | requestCallback | False | The callback that will manage the response |
 
 ### startCommercial (Function)
 
@@ -717,7 +732,7 @@ getUser(user, callback);
 | Name | Type | Optional | Description |
 | ---- | ---- | -------- | ---------- |
 | user | String | False | The user name of the user |
-| callback | requestCallback | False | The callback that will manage the response. |
+| callback | requestCallback | False | The callback that will manage the response |
 
 ### getAuthenticatedUser (Function)
 
@@ -792,7 +807,7 @@ getVideo(videoId, callback);
 | Name | Type | Optional | Description |
 | ---- | ---- | -------- | ---------- |
 | videoId | String | False | The id of the video |
-| callback | requestCallback | False | The callback that will manage the response. |
+| callback | requestCallback | False | The callback that will manage the response |
 
 ### getTopVideos (Function)
 
