@@ -1,6 +1,6 @@
 {
   "name": "twitch-api",
-  "version": "0.4.6",
+  "version": "0.5.0",
   "description": "Simple module for using twitch.tv's REST API in node.js",
   "keywords": [
     "express",
